@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-background: #09090f;
+  --color-surface: #111118;
+  --color-surface-2: #1a1a24;
+  --color-border: #2a2a38;
+  --color-accent: #00d97e;
+  --color-accent-dim: #00d97e22;
+  --color-sell: #ff4d6d;
+  --color-sell-dim: #ff4d6d22;
+  --color-hold: #f5a623;
+  --color-hold-dim: #f5a62322;
+  --color-text: #e8e8f0;
+  --color-muted: #6b6b80;
+  --font-display: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: #09090f;
+  color: #e8e8f0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #09090f; }
+::-webkit-scrollbar-thumb { background: #2a2a38; border-radius: 3px; }
+
+.mono { font-family: "JetBrains Mono", "Fira Mono", monospace; }
+
+/* Signal pill colours */
+.signal-buy  { color: #00d97e; background: #00d97e22; }
+.signal-sell { color: #ff4d6d; background: #ff4d6d22; }
+.signal-hold { color: #f5a623; background: #f5a62322; }
+
+/* Animated gradient border on cards */
+.glow-buy  { box-shadow: 0 0 0 1px #00d97e33; }
+.glow-sell { box-shadow: 0 0 0 1px #ff4d6d33; }
+.glow-hold { box-shadow: 0 0 0 1px #f5a62333; }
